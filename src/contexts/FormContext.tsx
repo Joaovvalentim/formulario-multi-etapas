@@ -42,7 +42,7 @@ const initialData: State = {
 const FormContext = createContext<ContextType | undefined>(undefined);
 
 //Reducer
-enum FormActions { //para saber se ja foi preenchido pelo usuario
+export enum FormActions { //para saber se ja foi preenchido pelo usuario
   setCurrentStep,
   setName,
   setLevel,
@@ -83,7 +83,7 @@ export const FormProvider = ({children}: FormProviderProps) => {
 
 //Context Hook
 
-const useForm = () => {
+export const useForm = () => {
   const context = useContext(FormContext);
   if (context === undefined) {
     throw new Error("useForm must be used within a FormContext");
