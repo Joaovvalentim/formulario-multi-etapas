@@ -25,6 +25,13 @@ export const FormStep2 = () => {
         }
 
     }
+
+    const setLevel = (level: number) => {
+        dispatch({
+            type: FormActions.setLevel,
+            payload: level
+        })
+    }
     return (
         <Theme>
             <C.Container>
@@ -33,15 +40,19 @@ export const FormStep2 = () => {
                 <p>Coloque seu nome</p>
 
                 <hr />
-                <SelectOptions 
-                title="Sou iniciante"
-                description="comecei a programar há menos de 2 anos"
-                icon="🤩"
+                <SelectOptions
+                    title="Sou iniciante"
+                    description="comecei a programar há menos de 2 anos"
+                    icon="🤩"
+                    selected={state.level === 0}
+                    onClick={() => setLevel(0)}
                 />
-                <SelectOptions 
-                title="Sou programador"
-                description="já programo há 2 anos ou mais"
-                icon="😎"
+                <SelectOptions
+                    title="Sou programador"
+                    description="já programo há 2 anos ou mais"
+                    icon="😎"
+                    selected={state.level === 1}
+                    onClick={() => setLevel(0)}
                 />
 
                 <button onClick={handleNextStep}>Próximo</button>
