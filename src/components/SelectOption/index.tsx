@@ -1,13 +1,13 @@
 import * as C from './styles'
 
 type Pros = {
-    title : string;
-    description : string;
-    icon : string;
+    title: string;
+    description: string;
+    icon: string;
 }
 
-export const SelectOptions = ({title, description, icon}: Pros) => {
-    return(
+export const SelectOptions = ({ title, description, icon }: Pros) => {
+    return (
         <C.Container>
             <C.Icon>{icon}</C.Icon>
             <C.Info>
