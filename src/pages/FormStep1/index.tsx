@@ -3,7 +3,7 @@ import * as C from './styles'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Theme } from '../../components/Theme'
 import { ChangeEvent, useEffect } from 'react';
-import { info } from 'console';
+
 
 
 export const FormStep1 = () => {
@@ -15,7 +15,7 @@ export const FormStep1 = () => {
             type: FormActions.setCurrentStep,
             payload: 1
         })
-    }, [])
+    }, [dispatch])
 
     const handleNextStep = () => {// este navigate usa o historioco para me jogar para proxima pagina ao clicar no botão
        if(state.name!== ''){// verifica se o campo Nome esta vazio, caso nao ele deixa passar para a pagina 2
@@ -34,7 +34,7 @@ export const FormStep1 = () => {
     return (
         <Theme>
             <C.Container>
-                <p>Passo 1/3 - {state.currentStep}</p>
+                <p>Passo 1/3</p>
                 <h1>Nome</h1>
                 <p>Coloque seu nome</p>
 
